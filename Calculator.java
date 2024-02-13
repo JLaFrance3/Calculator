@@ -1,3 +1,11 @@
+/**
+ * Jean LaFrance
+ * Assignment 3
+ * @author jlafrance
+ * @date 02/13/2024
+ * Calculator program used to test github initialization and commit cycle
+ */
+
 import java.util.Scanner;
 
 public class Calculator {
