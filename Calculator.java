@@ -23,7 +23,7 @@ public class Calculator {
             "\nMultiplication\nDivision\n");
         selection = scan.nextLine();
 
-        //Calulate total based on user selection with minor error checking
+        //Calulate total based on user selection with error checking
         switch (selection.toUpperCase().charAt(0)) {
             
             case 'A':   //Addition
@@ -42,8 +42,14 @@ public class Calculator {
                 break;
 
             case 'D':   //Division
-                System.out.println("\nYou have selected Division");
-                System.out.printf("%,.2f %% %,.2f = %,.2f", num1, num2, num1/num2);
+                //Check for division by 0
+                if(num2 == 0) {
+                    System.out.println("\nError: Divide by Zero");
+                }
+                else {
+                    System.out.println("\nYou have selected Division");
+                    System.out.printf("%,.2f %% %,.2f = %,.2f", num1, num2, num1/num2);
+                }
                 break;
 
             default:    //Invalid Entry
