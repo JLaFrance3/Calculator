@@ -4,17 +4,17 @@ public class Calculator {
     
     public static void main(String args[]) {
         
-        int num1;           //User entered number
-        int num2;           //User entered number
+        double num1;        //User entered number
+        double num2;        //User entered number
         String selection;   //Addition or Subtraction selection
 
         Scanner scan = new Scanner(System.in);
         
         //Obtain user inputs
         System.out.print("First number:\t");
-        num1 = scan.nextInt();
+        num1 = scan.nextDouble();
         System.out.print("Second number:\t");
-        num2 = scan.nextInt();
+        num2 = scan.nextDouble();
         scan.nextLine();
 
         //Prompt user for Addition or Subtraction
@@ -28,22 +28,22 @@ public class Calculator {
             
             case 'A':   //Addition
                 System.out.println("\nYou have selected Addition");
-                System.out.printf("%d + %d = %,d", num1, num2, num1+num2);
+                System.out.printf("%,.2f + %,.2f = %,.2f", num1, num2, num1+num2);
                 break;
                 
             case 'S':   //Subtraction
                 System.out.println("\nYou have selected Subtraction");
-                System.out.printf("%d - %d = %,d", num1, num2, num1-num2);
+                System.out.printf("%,.2f - %,.2f = %,.2f", num1, num2, num1-num2);
                 break;
 
             case 'M':   //Multiplication
                 System.out.println("\nYou have selected Multiplication");
-                System.out.printf("%d * %d = %,d", num1, num2, num1*num2);
+                System.out.printf("%,.2f * %,.2f = %,.2f", num1, num2, num1*num2);
                 break;
 
             case 'D':   //Division
                 System.out.println("\nYou have selected Division");
-                System.out.printf("%d %% %d = %,d", num1, num2, num1/num2);
+                System.out.printf("%,.2f %% %,.2f = %,.2f", num1, num2, num1/num2);
                 break;
 
             default:    //Invalid Entry
