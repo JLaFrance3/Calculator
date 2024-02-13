@@ -18,17 +18,37 @@ public class Calculator {
         scan.nextLine();
 
         //Prompt user for Addition or Subtraction
-        System.out.println("Please enter one of the following:\nAddition\nSubtraction\n");
+        System.out.println("Please enter one of the following:" +
+            "\nAddition\nSubtraction" + 
+            "\nMultiplication\nDivision\n");
         selection = scan.nextLine();
 
         //Calulate total based on user selection with minor error checking
-        if (selection.toUpperCase().charAt(0) == 'A') {
-            System.out.println("\nYou have selected Addition");
-            System.out.printf("%d + %d = %d", num1, num2, num1+num2);
-        }
-        else {
-            System.out.println("\nYou have selected Subtraction");
-            System.out.printf("%d - %d = %d", num1, num2, num1-num2);
+        switch (selection.toUpperCase().charAt(0)) {
+            
+            case 'A':   //Addition
+                System.out.println("\nYou have selected Addition");
+                System.out.printf("%d + %d = %,d", num1, num2, num1+num2);
+                break;
+                
+            case 'S':   //Subtraction
+                System.out.println("\nYou have selected Subtraction");
+                System.out.printf("%d - %d = %,d", num1, num2, num1-num2);
+                break;
+
+            case 'M':   //Multiplication
+                System.out.println("\nYou have selected Multiplication");
+                System.out.printf("%d * %d = %,d", num1, num2, num1*num2);
+                break;
+
+            case 'D':   //Division
+                System.out.println("\nYou have selected Division");
+                System.out.printf("%d %% %d = %,d", num1, num2, num1/num2);
+                break;
+
+            default:    //Invalid Entry
+                System.out.println("Invalid Selection");
+                break;
         }
 
         scan.close();
